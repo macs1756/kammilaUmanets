@@ -1,4 +1,11 @@
 
+setTimeout(()=>{
+	document.querySelector('.initial__name-autor').classList.add('active');
+document.querySelector('.initial__name-surname').classList.add('active');
+}, 700);
+
+
+
 const btnBurger = document.querySelector(".header__burger");
 const burger = document.querySelector(".burger__open");
 btnBurger.addEventListener("click", item =>{
@@ -20,6 +27,3 @@ window.addEventListener("scroll", ()=>{
 		header.classList.remove("header__scroll");
 	}
 });
-
-
-
