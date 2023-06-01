@@ -27,3 +27,24 @@ window.addEventListener("scroll", ()=>{
 		header.classList.remove("header__scroll");
 	}
 });
+
+
+const swiper = new Swiper('.swiper', {
+	
+	autoHeight: true,
+	loop: true,
+	spaceBetween: 20,
+	navigation: {
+	  nextEl: '.swiper__next',
+	  prevEl: '.swiper__prev',
+	},
+ 
+ });
+ 
+
+ $(document).ready(function() {
+	$('.question__body-title').click(function() {
+	  $(this).siblings('.question__body-answer').slideToggle();
+	  $(this).toggleClass('rotate');
+	});
+ });
