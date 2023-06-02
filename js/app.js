@@ -39,6 +39,22 @@ if(!document.querySelector('.politic')){
 	});
 
 
+
+const mainElement = document.querySelector('.main');
+const dekorElement = document.querySelector('.dekor');
+
+// Додаємо подію "hover" на елемент main
+mainElement.addEventListener('mouseenter', function() {
+  // Додаємо стилі до класу dekor
+  dekorElement.classList.add('rotate4');
+});
+
+// Видаляємо стилі при знятті "hover" з елементу main
+mainElement.addEventListener('mouseleave', function() {
+  // Видаляємо стилі з класу dekor
+  dekorElement.classList.remove('rotate4');
+});
+
 	const swiper = new Swiper('.swiper', {
 	
 		autoHeight: true,
@@ -51,6 +67,47 @@ if(!document.querySelector('.politic')){
 	 
 	 });
 
+	 const AllImgForm = document.querySelectorAll('.img-trigger');
+
+	 AllImgForm.forEach((el)=>{
+		el.addEventListener('click', ()=>{
+			window.location.hash = 'form';
+		});
+	 })
+
+
+
+
+
+
+	 const netImgElement = document.querySelector('.t1');
+	 const firstNetElement = document.querySelector('.tg1');
+	 
+	 netImgElement.addEventListener('mouseenter', function() {
+		firstNetElement.style.borderRadius = '15px';
+	 });
+	 
+	 netImgElement.addEventListener('mouseleave', function() {
+		firstNetElement.style.borderRadius = '';
+	 });
+
+
+	 const netImgElement2 = document.querySelector('.t2');
+	 const firstNetElement2 = document.querySelector('.tg2');
+	 
+	 netImgElement2.addEventListener('mouseenter', function() {
+		firstNetElement2.style.borderRadius = '15px';
+	 });
+	 
+	 netImgElement2.addEventListener('mouseleave', function() {
+		firstNetElement2.style.borderRadius = '';
+	 });
+
+
+
+
+
+
 
 	 setTimeout(()=>{
 		document.querySelector('.initial__name-autor').classList.add('active');
@@ -59,6 +116,8 @@ if(!document.querySelector('.politic')){
 }else{
 	header.classList.add("header__scroll");
 }
+
+
 
 
  
