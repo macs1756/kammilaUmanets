@@ -1,8 +1,4 @@
 
-setTimeout(()=>{
-	document.querySelector('.initial__name-autor').classList.add('active');
-document.querySelector('.initial__name-surname').classList.add('active');
-}, 700);
 
 
 
@@ -20,31 +16,49 @@ btnBurger.addEventListener("click", ()=>{
 
 let header = document.querySelector("header");
 
-window.addEventListener("scroll", ()=>{
-	if(scrollY>10){
-		header.classList.add("header__scroll");
-	}else{
-		header.classList.remove("header__scroll");
-	}
-});
 
 
-const swiper = new Swiper('.swiper', {
-	
-	autoHeight: true,
-	loop: true,
-	spaceBetween: 20,
-	navigation: {
-	  nextEl: '.swiper__next',
-	  prevEl: '.swiper__prev',
-	},
- 
- });
- 
+if(!document.querySelector('.politic')){
 
- $(document).ready(function() {
-	$('.question__body-title').click(function() {
-	  $(this).siblings('.question__body-answer').slideToggle();
-	  $(this).toggleClass('rotate');
+
+
+	$(document).ready(function() {
+		$('.question__body-title').click(function() {
+		  $(this).next('.question__body-answer').slideToggle();
+		  $(this).toggleClass('rotate');
+		});
+	 });
+
+
+	window.addEventListener("scroll", ()=>{
+		if(scrollY>10){
+			header.classList.add("header__scroll");
+		}else{
+			header.classList.remove("header__scroll");
+		}
 	});
- });
+
+
+	const swiper = new Swiper('.swiper', {
+	
+		autoHeight: true,
+		loop: true,
+		spaceBetween: 20,
+		navigation: {
+		  nextEl: '.swiper__next',
+		  prevEl: '.swiper__prev',
+		},
+	 
+	 });
+
+
+	 setTimeout(()=>{
+		document.querySelector('.initial__name-autor').classList.add('active');
+	document.querySelector('.initial__name-surname').classList.add('active');
+	}, 700);
+}else{
+	header.classList.add("header__scroll");
+}
+
+
+ 
